@@ -51,12 +51,11 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", date=" + date +
-                ", readStatus=" + readStatus +
-                '}';
+        return "Книга" + " " +
+                "Номер: " + id +
+                ", Название:'" + name + '\'' +
+                ", Автор:'" + author + '\'' +
+                ", Дата издания:" + date +
+                ", Статус прочтения:" + readStatus;
     }
 }
