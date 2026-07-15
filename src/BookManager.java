@@ -85,4 +85,13 @@ public class BookManager {
         return unreadBooks;
     }
 
+    public BookStats getLibrarySummary(){
+        if (books.isEmpty()) {
+            throw new IllegalArgumentException("Список книг пуст!");
+        }
+        // TODO: Implement actual percentage calculation logic instead of hardcoded value
+        BookStats stats = new BookStats(getAllBooks().size(), showReadBooks().size(), showUnreadBooks().size(), 100);
+        return stats;
+    }
+
 }

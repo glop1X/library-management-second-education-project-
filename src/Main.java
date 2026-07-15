@@ -112,7 +112,7 @@ void main() {
         if(choice == 6){
             try{
                 if(bookManager.showReadBooks() == null){
-                    System.out.println("Такой книги нет!");
+                    System.out.println("Прочитанных книг нет!");
                 } else{
                     List<Book> readBooks = bookManager.showReadBooks();
 
@@ -128,7 +128,7 @@ void main() {
         if(choice == 7){
             try{
                 if(bookManager.showReadBooks() == null){
-                    System.out.println("Такой книги нет!");
+                    System.out.println("Непрочитанных книг нет!");
                 } else{
                     List<Book> unreadBooks = bookManager.showUnreadBooks();
 
@@ -141,6 +141,16 @@ void main() {
             }
         }
 
+        if(choice == 8){
+           try{
+               BookStats stats = bookManager.getLibrarySummary();
+               System.out.println("Статистика по библиотеке:");
+               System.out.println(" - " + stats);
+           } catch(Exception e){
+               String message = e.getMessage();
+               System.err.println("Ошибка: " + message);
+           }
+        }
         System.out.println("Выберите следующую функцию:");
     }
 }
