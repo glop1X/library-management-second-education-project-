@@ -112,7 +112,7 @@ void main() {
 
         if(choice == 6){
             try{
-                if(bookManager.showReadBooks() == null){
+                if(bookManager.showReadBooks().isEmpty()){
                     System.out.println("Прочитанных книг нет!");
                 } else{
                     List<Book> readBooks = bookManager.showReadBooks();
@@ -128,7 +128,7 @@ void main() {
 
         if(choice == 7){
             try{
-                if(bookManager.showReadBooks() == null){
+                if(bookManager.showReadBooks().isEmpty()){
                     System.out.println("Непрочитанных книг нет!");
                 } else{
                     List<Book> unreadBooks = bookManager.showUnreadBooks();
