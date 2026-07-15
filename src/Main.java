@@ -82,6 +82,7 @@ void main() {
                 }
                 if (bookManager.searchBook(name, author) != null){
                     bookManager.changeStatus(name,author, true);
+                    System.out.println("Книга помечена, как прочтенная!");
                 } else {
                     System.out.println("Такой книги нет!");
                 }
@@ -145,7 +146,9 @@ void main() {
            try{
                BookStats stats = bookManager.getLibrarySummary();
                System.out.println("Статистика по библиотеке:");
-               System.out.println(" - " + stats);
+               BookStats bookStats = stats;
+               System.out.printf("Всего книг: %-20s | Прочтенных: %-15s | Непрочтенных: %4d | Процент прочтенных: %.2f%% %n",
+                       bookStats.total(), bookStats.read(), bookStats.unread(), bookStats.percantage());
            } catch(Exception e){
                String message = e.getMessage();
                System.err.println("Ошибка: " + message);

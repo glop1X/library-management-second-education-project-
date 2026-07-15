@@ -90,7 +90,11 @@ public class BookManager {
             throw new IllegalArgumentException("Список книг пуст!");
         }
         // TODO: Implement actual percentage calculation logic instead of hardcoded value
-        BookStats stats = new BookStats(getAllBooks().size(), showReadBooks().size(), showUnreadBooks().size(), 100);
+        int allBooks = getAllBooks().size();
+        int readBooks = showReadBooks().size();
+        int unreadBooks = showUnreadBooks().size();
+        double percentageReadBooks = ((double) readBooks /allBooks)*100;
+        BookStats stats = new BookStats(allBooks, readBooks, unreadBooks, percentageReadBooks);
         return stats;
     }
 
