@@ -18,12 +18,9 @@ public class BookManager {
         }
             Book bookToRemove = null;
             Book foundBook = searchBook(name, author);
-            for(Book currentBook : books){
-                if(foundBook == currentBook){
-                    bookToRemove = currentBook;
-                    break;
+                if(foundBook != null){
+                    bookToRemove = foundBook;
                 }
-            }
         if(bookToRemove != null){
             books.remove(bookToRemove);
         } else{
@@ -45,12 +42,10 @@ public class BookManager {
 
     public void changeStatus(String name, String author, boolean status){
         Book foundBook = searchBook(name, author);
-            for(Book currentBook : books){
-                if(foundBook == currentBook){
-                    currentBook.setReadStatus(status);
-                    break;
+                if(foundBook != null){
+                    foundBook.setReadStatus(status);
+
                 }
-            }
     }
 
     public List<Book> getAllBooks() {
@@ -89,7 +84,6 @@ public class BookManager {
         if (books.isEmpty()) {
             throw new IllegalArgumentException("Список книг пуст!");
         }
-        // TODO: Implement actual percentage calculation logic instead of hardcoded value
         int allBooks = getAllBooks().size();
         int readBooks = showReadBooks().size();
         int unreadBooks = showUnreadBooks().size();
