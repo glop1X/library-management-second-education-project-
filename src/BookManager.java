@@ -71,4 +71,18 @@ public class BookManager {
         return readBooks;
     }
 
+    public List<Book> showUnreadBooks(){
+        if (books.isEmpty()) {
+            throw new IllegalArgumentException("Список книг пуст!");
+        }
+        List<Book> unreadBooks = new ArrayList<>();
+
+        for(Book currentBook : books){
+            if(!currentBook.isReadStatus()){
+                unreadBooks.add(currentBook);
+            }
+        }
+        return unreadBooks;
+    }
+
 }

@@ -125,6 +125,22 @@ void main() {
                 }
         }
 
+        if(choice == 7){
+            try{
+                if(bookManager.showReadBooks() == null){
+                    System.out.println("Такой книги нет!");
+                } else{
+                    List<Book> unreadBooks = bookManager.showUnreadBooks();
+
+                    System.out.println("Список непрочитанных книг:");
+                    unreadBooks.forEach(book -> System.out.println(" - " + book));
+                }
+            } catch(Exception e){
+                String message = e.getMessage();
+                System.err.println("Ошибка: " + message);
+            }
+        }
+
         System.out.println("Выберите следующую функцию:");
     }
 }
