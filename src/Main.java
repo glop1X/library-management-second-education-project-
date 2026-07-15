@@ -148,7 +148,7 @@ void main() {
                System.out.println("Статистика по библиотеке:");
                BookStats bookStats = stats;
                System.out.printf("Всего книг: %-20s | Прочтенных: %-15s | Непрочтенных: %4d | Процент прочтенных: %.2f%% %n",
-                       bookStats.total(), bookStats.read(), bookStats.unread(), bookStats.percantage());
+                       bookStats.total(), bookStats.read(), bookStats.unread(), bookStats.percentage());
            } catch(Exception e){
                String message = e.getMessage();
                System.err.println("Ошибка: " + message);
